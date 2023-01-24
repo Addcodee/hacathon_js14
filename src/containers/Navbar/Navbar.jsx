@@ -13,6 +13,8 @@ import Tooltip from "@mui/material/Tooltip";
 import MenuItem from "@mui/material/MenuItem";
 import AdbIcon from "@mui/icons-material/Adb";
 import { Link } from "react-router-dom";
+import { HiShoppingCart } from "react-icons/hi";
+import "./navbar.css";
 
 const pages = [
   { name: "Home", link: "/", id: 1 },
@@ -44,7 +46,7 @@ function Navbar() {
 
   return (
     <AppBar position="static">
-      <Container maxWidth="xl">
+      <Container maxWidth="xl" sx={{ backgroundColor: "white" }}>
         <Toolbar disableGutters>
           <Typography
             variant="h6"
@@ -54,17 +56,20 @@ function Navbar() {
             sx={{
               mr: 2,
               display: { xs: "none", md: "flex" },
-              fontFamily: "monospace",
+              fontFamily: "Montserrat",
               fontWeight: 700,
               letterSpacing: ".3rem",
               color: "inherit",
               textDecoration: "none",
+              color: "black",
             }}
           >
             TULPAR
           </Typography>
 
-          <Box sx={{ flexGrow: 1, display: { xs: "flex", md: "none" } }}>
+          <Box
+            sx={{ flexGrow: 1, display: { xs: "flex", md: "none" } }}
+          >
             <IconButton
               size="large"
               aria-label="account of current user"
@@ -95,14 +100,18 @@ function Navbar() {
             >
               {pages.map((page) => (
                 <Link to={page.link} key={page.id}>
-                  <MenuItem onClick={handleCloseNavMenu}>
-                    <Typography textAlign="center">{page.name}</Typography>
+                  <MenuItem
+                    sx={{ color: "black" }}
+                    onClick={handleCloseNavMenu}
+                  >
+                    <Typography textAlign="center">
+                      {page.name}
+                    </Typography>
                   </MenuItem>
                 </Link>
               ))}
             </Menu>
           </Box>
-          <AdbIcon sx={{ display: { xs: "flex", md: "none" }, mr: 1 }} />
           <Typography
             variant="h5"
             noWrap
@@ -112,32 +121,53 @@ function Navbar() {
               mr: 2,
               display: { xs: "flex", md: "none" },
               flexGrow: 1,
-              fontFamily: "monospace",
+              fontFamily: "Montserrat",
               fontWeight: 700,
               letterSpacing: ".3rem",
               color: "inherit",
               textDecoration: "none",
+              color: "black",
+              fontFamily: "Montserrat",
             }}
           >
-            LOGO
+            TULPAR
           </Typography>
-          <Box sx={{ flexGrow: 1, display: { xs: "none", md: "flex" } }}>
+          <Box
+            sx={{ flexGrow: 1, display: { xs: "none", md: "flex" } }}
+          >
             {pages.map((page) => (
               <Link to={page.link} key={page.id}>
                 <Button
                   onClick={handleCloseNavMenu}
-                  sx={{ my: 2, color: "white", display: "block" }}
+                  sx={{
+                    color: "black",
+                    display: "block",
+                    fontFamily: "Montserrat",
+                  }}
                 >
                   {page.name}
                 </Button>
               </Link>
             ))}
           </Box>
-
+          <Box
+            sx={{
+              flexGrow: 0.02,
+              display: "flex",
+              alignItems: "center",
+            }}
+          >
+            <Link to="/cart">
+              <HiShoppingCart className="nav__cart" />
+            </Link>
+          </Box>
           <Box sx={{ flexGrow: 0 }}>
             <Tooltip title="Open settings">
               <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
-                <Avatar alt="Remy Sharp" src="/static/images/avatar/2.jpg" />
+                <Avatar
+                  alt="Remy Sharp"
+                  src="/static/images/avatar/2.jpg"
+                />
               </IconButton>
             </Tooltip>
             <Menu
@@ -158,7 +188,12 @@ function Navbar() {
             >
               {settings.map((setting) => (
                 <MenuItem key={setting} onClick={handleCloseUserMenu}>
-                  <Typography textAlign="center">{setting}</Typography>
+                  <Typography
+                    textAlign="center"
+                    sx={{ fontFamily: "Montserrat" }}
+                  >
+                    {setting}
+                  </Typography>
                 </MenuItem>
               ))}
             </Menu>
