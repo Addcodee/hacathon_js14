@@ -1,0 +1,25 @@
+{
+  "models": [
+    {
+      "name": "",
+      "desc": "",
+      "price": 0,
+      "img": "",
+      "id": 1
+    },
+    {
+      "name": "",
+      "desc": "",
+      "price": 0,
+      "img": "",
+      "id": 2
+    },
+    {
+      "name": "Volkswagen",
+      "desc": "fast",
+      "price": 50000,
+      "img": "img",
+      "id": 3
+    }
+  ]
+}
