@@ -15,7 +15,6 @@ export default function ProductCard({ product }) {
   return (
     <Card
       className="product__card"
-      sx={{ width: 345, marginBottom: "50px" }}
     >
       <CardMedia
         sx={{ height: 140 }}

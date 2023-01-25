@@ -13,7 +13,7 @@ export default function SelectInput() {
   };
 
   return (
-    <Box sx={{ width: 200, marginBottom: "5px" }} className='selectInput'>
+    <Box className='selectInput'>
       <FormControl fullWidth>
         <InputLabel id="demo-simple-select-label">Age</InputLabel>
         <Select

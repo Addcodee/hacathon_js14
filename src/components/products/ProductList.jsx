@@ -14,10 +14,9 @@ const ProductList = () => {
   }, []);
 
   return (
-    <div className="productList">
+    <div className="productList" style={{marginTop: '3rem'}}>
       <Grid
         className="productList__navigation"
-        sx={{ padding: "0rem 6rem" }}
       >
         <Paper
           className="productList__navigation-container"
@@ -42,12 +41,6 @@ const ProductList = () => {
         </Paper>
       </Grid>
       <Box
-        sx={{
-          display: "flex",
-          flexWrap: "wrap",
-          justifyContent: "space-between",
-          padding: "2rem 6rem",
-        }}
         className="productList__cards"
       >
         {products.map((product) => (
