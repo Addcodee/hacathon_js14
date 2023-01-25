@@ -37,6 +37,7 @@ const AddProduct = () => {
           alignItems: "center",
           width: "50%",
           marginTop: "5rem",
+          fontFamily: 'Montserrat'
         }}
       >
         <Typography>ADMIN PANEL</Typography>
@@ -45,30 +46,36 @@ const AddProduct = () => {
           fullWidth
           value={product.name}
           name="name"
-          placeholder="name"
+          label="name"
+          sx={{ marginBottom: "1rem", }}
         />
         <TextField
           onChange={handleValues}
           fullWidth
           value={product.desc}
           name="desc"
-          placeholder="description"
+          label="description"
+          sx={{ marginBottom: "1rem" }}
         />
         <TextField
           onChange={handleValues}
           fullWidth
           value={product.price}
           name="price"
-          placeholder="price"
+          label="price"
+          sx={{ marginBottom: "1rem" }}
         />
         <TextField
           onChange={handleValues}
           fullWidth
           value={product.img}
           name="img"
-          placeholder="img URL"
+          label="img URL"
+          sx={{ marginBottom: "1rem" }}
         />
-        <Button onClick={() => addModel(product)}>Create Product</Button>
+        <Button onClick={() => addModel(product)}>
+          Create Product
+        </Button>
       </Box>
     </>
   );
