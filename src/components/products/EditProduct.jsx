@@ -1,17 +1,14 @@
 import { Button, TextField, Typography } from "@mui/material";
 import { Box } from "@mui/system";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
+import { useNavigate, useParams } from "react-router-dom";
 import { useProducts } from "../../context/ProductsContextProvider";
 
-const AddProduct = () => {
-  const { addModel } = useProducts();
+const EditProduct = () => {
+  const { getModel, model, saveEdit } = useProducts();
 
-  const [product, setProduct] = useState({
-    name: "",
-    desc: "",
-    price: "",
-    img: "",
-  });
+  const [product, setProduct] = useState(model);
+  const navigate = useNavigate();
 
   const handleValues = (e) => {
     if (e.target.name === "price") {
@@ -28,8 +25,17 @@ const AddProduct = () => {
       setProduct(obj);
     }
   };
+  const { id } = useParams();
+  useEffect(() => {
+    getModel(id);
+  }, []);
+
+  useEffect(() => {
+    setProduct(model);
+  }, [model]);
+
   return (
-    <>
+    <div style={{ display: "flex", justifyContent: "center" }}>
       <Box
         sx={{
           display: "flex",
@@ -40,11 +46,11 @@ const AddProduct = () => {
           fontFamily: "Montserrat",
         }}
       >
-        <Typography>ADMIN PANEL</Typography>
+        <Typography>EDIT PANEL</Typography>
         <TextField
           onChange={handleValues}
           fullWidth
-          value={product.name}
+          value={product.name || ""}
           name="name"
           label="name"
           sx={{ marginBottom: "1rem" }}
@@ -52,7 +58,7 @@ const AddProduct = () => {
         <TextField
           onChange={handleValues}
           fullWidth
-          value={product.desc}
+          value={product.desc || ""}
           name="desc"
           label="description"
           sx={{ marginBottom: "1rem" }}
@@ -60,7 +66,7 @@ const AddProduct = () => {
         <TextField
           onChange={handleValues}
           fullWidth
-          value={product.price}
+          value={product.price || ""}
           name="price"
           label="price"
           sx={{ marginBottom: "1rem" }}
@@ -68,15 +74,22 @@ const AddProduct = () => {
         <TextField
           onChange={handleValues}
           fullWidth
-          value={product.img}
+          value={product.img || ""}
           name="img"
           label="img URL"
           sx={{ marginBottom: "1rem" }}
         />
-        <Button onClick={() => addModel(product)}>Create Product</Button>
+        <Button
+          onClick={() => {
+            saveEdit(id, product);
+            navigate("/models");
+          }}
+        >
+          Save changes
+        </Button>
       </Box>
-    </>
+    </div>
   );
 };
 
-export default AddProduct;
+export default EditProduct;
