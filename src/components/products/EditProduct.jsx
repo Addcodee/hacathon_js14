@@ -5,34 +5,36 @@ import { useNavigate, useParams } from "react-router-dom";
 import { useProducts } from "../../context/ProductsContextProvider";
 
 const EditProduct = () => {
-  const { getModel, model, saveEdit } = useProducts();
+  const { getProductDetails, productDetails, saveEdit } = useProducts();
 
-  const [product, setProduct] = useState(model);
+  const [editedProduct, setEditedProduct] = useState(productDetails);
   const navigate = useNavigate();
 
   const handleValues = (e) => {
     if (e.target.name === "price") {
       let obj = {
-        ...product,
+        ...editedProduct,
         [e.target.name]: Number(e.target.value),
       };
-      setProduct(obj);
+      setEditedProduct(obj);
     } else {
       let obj = {
-        ...product,
+        ...editedProduct,
         [e.target.name]: e.target.value,
       };
-      setProduct(obj);
+      setEditedProduct(obj);
     }
   };
   const { id } = useParams();
+
   useEffect(() => {
-    getModel(id);
+    getProductDetails(id);
   }, []);
 
   useEffect(() => {
-    setProduct(model);
-  }, [model]);
+    setEditedProduct(productDetails);
+  }, [productDetails]);
+
 
   return (
     <div style={{ display: "flex", justifyContent: "center" }}>
@@ -50,7 +52,7 @@ const EditProduct = () => {
         <TextField
           onChange={handleValues}
           fullWidth
-          value={product.name || ""}
+          value={editedProduct.name || ""}
           name="name"
           label="name"
           sx={{ marginBottom: "1rem" }}
@@ -58,7 +60,7 @@ const EditProduct = () => {
         <TextField
           onChange={handleValues}
           fullWidth
-          value={product.desc || ""}
+          value={editedProduct.desc || ""}
           name="desc"
           label="description"
           sx={{ marginBottom: "1rem" }}
@@ -66,7 +68,7 @@ const EditProduct = () => {
         <TextField
           onChange={handleValues}
           fullWidth
-          value={product.price || ""}
+          value={editedProduct.price || ""}
           name="price"
           label="price"
           sx={{ marginBottom: "1rem" }}
@@ -74,14 +76,14 @@ const EditProduct = () => {
         <TextField
           onChange={handleValues}
           fullWidth
-          value={product.img || ""}
+          value={editedProduct.img || ""}
           name="img"
           label="img URL"
           sx={{ marginBottom: "1rem" }}
         />
         <Button
           onClick={() => {
-            saveEdit(id, product);
+            saveEdit(id, editedProduct);
             navigate("/models");
           }}
         >

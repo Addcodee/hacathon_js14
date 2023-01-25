@@ -44,7 +44,7 @@ function Navbar() {
   };
 
   return (
-    <AppBar position="static">
+    <AppBar position="static" sx={{marginBottom: '2rem'}}>
       <Container maxWidth="xl" sx={{ backgroundColor: "white" }}>
         <Toolbar disableGutters>
           <Typography
@@ -66,8 +66,11 @@ function Navbar() {
             TULPAR
           </Typography>
 
-          <Box sx={{ flexGrow: 1, display: { xs: "flex", md: "none" } }}>
+          <Box
+            sx={{ flexGrow: 1, display: { xs: "flex", md: "none" } }}
+          >
             <IconButton
+              sx={{ color: "black" }}
               size="large"
               aria-label="account of current user"
               aria-controls="menu-appbar"
@@ -101,7 +104,9 @@ function Navbar() {
                     sx={{ color: "black" }}
                     onClick={handleCloseNavMenu}
                   >
-                    <Typography textAlign="center">{page.name}</Typography>
+                    <Typography textAlign="center">
+                      {page.name}
+                    </Typography>
                   </MenuItem>
                 </Link>
               ))}
@@ -127,7 +132,9 @@ function Navbar() {
           >
             TULPAR
           </Typography>
-          <Box sx={{ flexGrow: 1, display: { xs: "none", md: "flex" } }}>
+          <Box
+            sx={{ flexGrow: 1, display: { xs: "none", md: "flex" } }}
+          >
             {pages.map((page) => (
               <Link to={page.link} key={page.id}>
                 <Button
@@ -157,7 +164,10 @@ function Navbar() {
           <Box sx={{ flexGrow: 0 }}>
             <Tooltip title="Open settings">
               <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
-                <Avatar alt="Remy Sharp" src="/static/images/avatar/2.jpg" />
+                <Avatar
+                  alt="Remy Sharp"
+                  src="/static/images/avatar/2.jpg"
+                />
               </IconButton>
             </Tooltip>
             <Menu
