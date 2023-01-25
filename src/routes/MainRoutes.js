@@ -7,6 +7,7 @@ import HomePage from "../pages/HomePage/HomePage";
 import ModelsPage from "../pages/NavbarPages/ModelsPage";
 import NotFoundPage from "../pages/NotFoundPage";
 import ServicesPage from "../pages/NavbarPages/ServicesPage";
+import EditProduct from "../components/products/EditProduct";
 
 const MainRoutes = () => {
   const PUBLIC_ROUTES = [
@@ -17,17 +18,14 @@ const MainRoutes = () => {
     { link: "/admin", element: <AdminPage />, id: 5 },
     { link: "/cart", element: <CartPage />, id: 6 },
     { link: "*", element: <NotFoundPage />, id: 7 },
+    { link: "/edit/:id", element: <EditProduct />, id: 8 },
   ];
 
   return (
     <>
       <Routes>
         {PUBLIC_ROUTES.map((item) => (
-          <Route
-            path={item.link}
-            element={item.element}
-            key={item.id}
-          />
+          <Route path={item.link} element={item.element} key={item.id} />
         ))}
       </Routes>
     </>
