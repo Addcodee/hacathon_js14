@@ -8,31 +8,44 @@ import Typography from "@mui/material/Typography";
 import { useNavigate } from "react-router-dom";
 import { useProducts } from "../../context/ProductsContextProvider";
 
-export default function ProductCard({ obj }) {
+export default function ProductCard({ product }) {
   const navigate = useNavigate();
-  const { deleteModel } = useProducts();
+  const { deleteProduct } = useProducts();
 
   return (
-    <Card sx={{ maxWidth: 345 }}>
-      <CardMedia sx={{ height: 140 }} image={obj.img} title="green iguana" />
+    <Card
+      className="product__card"
+      sx={{ width: 345, marginBottom: "50px" }}
+    >
+      <CardMedia
+        sx={{ height: 140 }}
+        image={product.img}
+        title="green iguana"
+      />
 
       <CardContent>
         <Typography gutterBottom variant="h5" component="div">
-          {obj.name}
+          {product.name}
         </Typography>
         <Typography gutterBottom variant="h5" component="div">
-          {obj.price}
+          {product.price}
         </Typography>
 
         <Typography variant="body2" color="text.secondary">
-          {obj.desc}
+          {product.desc}
         </Typography>
       </CardContent>
       <CardActions>
-        <Button onClick={() => navigate(`/edit/${obj.id}`)} size="small">
+        <Button
+          onClick={() => navigate(`/edit/${product.id}`)}
+          size="small"
+        >
           EDIT
         </Button>
-        <Button onClick={() => deleteModel(obj.id)} size="small">
+        <Button
+          onClick={() => deleteProduct(product.id)}
+          size="small"
+        >
           DELETE
         </Button>
       </CardActions>

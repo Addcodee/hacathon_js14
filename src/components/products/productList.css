@@ -1,0 +1,33 @@
+@media screen and (max-width: 1000px) {
+  .productList__navigation {
+    padding: 0em 2rem;
+  }
+  .productList__navigation-container {
+    align-items: center;
+    flex-direction: column;
+  }
+  .productList__selectInputs {
+    flex-direction: column;
+    width: 100%;
+  }
+  .searchInput {
+    width: 100%;
+  }
+  .selectInput {
+    width: 100%;
+  }
+  .productList__cards {
+    padding: 2rem;
+  }
+}
+
+@media screen and (max-width: 890px) {
+  .productList__cards {
+    flex-direction: column;
+    align-items: center;
+  }
+  .product__card {
+    width: 100%;
+    margin-bottom: 20px;
+  }
+}

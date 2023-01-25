@@ -1,17 +1,30 @@
 import axios from "axios";
-import React, { createContext, useContext, useState } from "react";
+import React, { createContext, useContext, useReducer } from "react";
+import { API, CRUD } from "../helpers/variables";
 
 export const productsContext = createContext();
 export const useProducts = () => useContext(productsContext);
 
+const INIT_STATE = {
+  products: [],
+  productDetails: {},
+};
+
+const reducer = (state = INIT_STATE, action) => {
+  switch (action.type) {
+    case CRUD.GET_PRODUCTS:
+      return { ...state, products: action.payload };
+    case CRUD.GET_PRODUCT_DETAILS:
+      return { ...state, productDetails: action.payload };
+    default:
+      return state;
+  }
+};
 const ProductsContextProvider = ({ children }) => {
-  const API = "http://localhost:8000/models";
+  const [state, dispatch] = useReducer(reducer, INIT_STATE);
 
-  const [models, setModels] = useState([]);
-  const [model, setModel] = useState({});
-
-  //! Add
-  async function addModel(newProduct) {
+  //! Create
+  async function addProduct(newProduct) {
     if (
       !newProduct.name ||
       !newProduct.desc ||
@@ -25,34 +38,48 @@ const ProductsContextProvider = ({ children }) => {
   }
 
   //! Read
-  async function getModels() {
+  async function getProducts() {
     const { data } = await axios(API);
-    setModels(data);
+
+    dispatch({ type: CRUD.GET_PRODUCTS, payload: data });
   }
-  //! Updata
-  async function getModel(id) {
+  //! Update
+  async function getProductDetails(id) {
     const { data } = await axios(`${API}/${id}`);
-    setModel(data);
+    dispatch({
+      type: CRUD.GET_PRODUCT_DETAILS,
+      payload: data,
+    });
   }
 
-  async function saveEdit(id, editedModel) {
-    await axios.patch(`${API}/${id}`, editedModel);
+  async function saveEdit(id, editedProduct) {
+    if (
+      !editedProduct.name ||
+      !editedProduct.desc ||
+      !editedProduct.price ||
+      !editedProduct.img
+    ) {
+      alert("error");
+      return;
+    }
+    await axios.patch(`${API}/${id}`, editedProduct);
+    getProducts();
   }
 
   //! Delete
-  async function deleteModel(id) {
+  async function deleteProduct(id) {
     await axios.delete(`${API}/${id}`);
-    getModels();
+    getProducts();
   }
 
   const values = {
-    addModel,
-    getModels,
-    models,
-    model,
-    getModel,
+    addProduct,
+    getProducts,
+    products: state.products,
+    productDetails: state.productDetails,
+    getProductDetails,
     saveEdit,
-    deleteModel,
+    deleteProduct,
   };
   return (
     <productsContext.Provider value={values}>

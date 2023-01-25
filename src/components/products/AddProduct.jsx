@@ -1,10 +1,11 @@
 import { Button, TextField, Typography } from "@mui/material";
 import { Box } from "@mui/system";
 import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import { useProducts } from "../../context/ProductsContextProvider";
 
 const AddProduct = () => {
-  const { addModel } = useProducts();
+  const { addProduct } = useProducts();
 
   const [product, setProduct] = useState({
     name: "",
@@ -12,6 +13,12 @@ const AddProduct = () => {
     price: "",
     img: "",
   });
+
+  function clearInputs() {
+    setProduct({ name: "", desc: "", price: "", img: "" });
+  }
+
+  const navigate = useNavigate();
 
   const handleValues = (e) => {
     if (e.target.name === "price") {
@@ -73,7 +80,15 @@ const AddProduct = () => {
           label="img URL"
           sx={{ marginBottom: "1rem" }}
         />
-        <Button onClick={() => addModel(product)}>Create Product</Button>
+        <Button
+          onClick={() => {
+            addProduct(product);
+            navigate("/models");
+            clearInputs();
+          }}
+        >
+          Create Product
+        </Button>
       </Box>
     </>
   );
