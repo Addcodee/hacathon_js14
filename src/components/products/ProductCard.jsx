@@ -27,7 +27,7 @@ export default function ProductCard({ product }) {
           {product.name}
         </Typography>
         <Typography gutterBottom variant="h5" component="div">
-          {product.price}
+          {product.price}$
         </Typography>
 
         <Typography variant="body2" color="text.secondary">
