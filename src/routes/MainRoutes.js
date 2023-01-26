@@ -21,11 +21,16 @@ const MainRoutes = () => {
     { link: "/edit/:id", element: <EditProduct />, id: 8 },
   ];
 
+
   return (
     <>
       <Routes>
         {PUBLIC_ROUTES.map((item) => (
-          <Route path={item.link} element={item.element} key={item.id} />
+          <Route
+            path={item.link}
+            element={item.element}
+            key={item.id}
+          />
         ))}
       </Routes>
     </>

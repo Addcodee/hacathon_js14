@@ -1,88 +1,67 @@
 {
   "models": [
     {
-      "name": "Audi",
-      "desc": "oyadufuiah",
-      "price": 8798798,
-      "img": "https://images.pexels.com/photos/909907/pexels-photo-909907.jpeg?auto=compress&cs=tinysrgb&w=600",
+      "name": "AUDI A7",
+      "desc": "Автомобиль базируется на концепте Audi Sportback Concept, при этом его дизайн заметно консервативнее и ориентирован на другие модели марки Audi.",
+      "price": 11000,
+      "img": "https://avatars.mds.yandex.net/get-verba/216201/2a0000017f6e15f4368df3112afb695baac4/cattouchret",
       "id": 1
     },
     {
-      "name": "Audi 2",
-      "desc": "78ujjkdhjfhdkjbf",
-      "price": 867786876,
-      "img": "https://images.pexels.com/photos/1545743/pexels-photo-1545743.jpeg?auto=compress&cs=tinysrgb&w=600",
+      "name": "Koenigsegg Agera RS",
+      "desc": "Agera RS был представлен на Женевском автосалоне 2015 года вместе с прототипом Regera. Agera RS — это усовершенствованная версия Agera R, реализующая некоторые новые технологии и функции One:1 и сочетающая в себе функции Agera R и Agera S.",
+      "price": 50000,
+      "img": "https://i0.wp.com/asphalt9.info/wp-content/uploads/2022/11/Koenigsegg-Agera-RS.jpg?resize=1062%2C588&ssl=1",
       "id": 2
     },
     {
-      "name": "Audi 3",
-      "desc": "shfjhlksjflkj",
-      "price": 87349178,
-      "img": "https://images.pexels.com/photos/3221163/pexels-photo-3221163.jpeg?auto=compress&cs=tinysrgb&w=600",
+      "name": "BMW iM(2025)",
+      "desc": "This is what we think the brand-new BMW iM will look like when it's expected to be announced in 2025.",
+      "price": 1000000000,
+      "img": "https://i.ytimg.com/vi/9IVLTCmdTkc/maxresdefault.jpg",
       "id": 3
     },
     {
-      "name": "Audi",
-      "desc": "oyadufuiah",
-      "price": 8798798,
-      "img": "https://images.pexels.com/photos/909907/pexels-photo-909907.jpeg?auto=compress&cs=tinysrgb&w=600",
+      "name": "Mercedes-Benz S-Class",
+      "desc": "It’s impossible not to think of the previous six generations of Mercedes S-Class as you approach this seventh iteration. ",
+      "price": 74480,
+      "img": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQzmUBRM4BUzdmoN5Eud7a1oPn1133YIy82oA&usqp=CAU",
       "id": 4
     },
     {
-      "name": "Audi 2",
-      "desc": "78ujjkdhjfhdkjbf",
-      "price": 867786876,
-      "img": "https://images.pexels.com/photos/1545743/pexels-photo-1545743.jpeg?auto=compress&cs=tinysrgb&w=600",
+      "name": "Tesla Model-X",
+      "desc": "Tesla (TSLA) was founded in 2003 and named after the 19th-century inventor Nikola Tesla, famous for discovering the properties of rotating electromagnetic fields.",
+      "price": 45000,
+      "img": "https://www.investing.com/academy/wp-content/uploads/2022/08/tesla-statistics.jpg",
       "id": 5
     },
     {
-      "name": "Audi 3",
-      "desc": "shfjhlksjflkj",
-      "price": 87349178,
-      "img": "https://images.pexels.com/photos/3221163/pexels-photo-3221163.jpeg?auto=compress&cs=tinysrgb&w=600",
+      "name": "Lamborgini Aventador Ultimae",
+      "desc": "Ultimae is latin for the final or last. Which this is. Not just the last Aventador, but the last appearance of Lamborghini’s V12 before the Aventador replacement appears with V12 hybrid power.",
+      "price": 40001000,
+      "img": "https://www.topgear.com/sites/default/files/2022/04/1-Lamborghini-Aventador-Ultimae.jpg",
       "id": 6
     },
     {
-      "name": "Audi",
-      "desc": "oyadufuiah",
-      "price": 8798798,
-      "img": "https://images.pexels.com/photos/909907/pexels-photo-909907.jpeg?auto=compress&cs=tinysrgb&w=600",
+      "name": "Bugatti Divo",
+      "desc": "Bugatti Divo — спортивный автомобиль автопроизводителя Bugatti. Автомобиль назван в честь французского гонщика Альберта Диво, который участвовал в гонках за команду Bugatti в 1920-х годах и выиграл гонку Targa Florio дважды[1].",
+      "price": 100000000,
+      "img": "https://upload.wikimedia.org/wikipedia/commons/1/16/Bugatti_Divo%2C_GIMS_2019%2C_Le_Grand-Saconnex_%28GIMS0029%29.jpg",
       "id": 7
     },
     {
-      "name": "Audi 2",
-      "desc": "78ujjkdhjfhdkjbf",
-      "price": 867786876,
-      "img": "https://images.pexels.com/photos/1545743/pexels-photo-1545743.jpeg?auto=compress&cs=tinysrgb&w=600",
+      "name": "Toyota Crown",
+      "desc": "I just wrote the description by myself, cuz nobody care, i guess nobody could notice it",
+      "price": 1000000,
+      "img": "https://hips.hearstapps.com/hmg-prod/images/2023-toyota-crown-101-1657642173.jpg?crop=0.729xw:0.820xh;0.218xw,0.0481xh&resize=640:*",
       "id": 8
     },
     {
-      "name": "Audi 3",
-      "desc": "shfjhlksjflkj",
-      "price": 87349178,
-      "img": "https://images.pexels.com/photos/3221163/pexels-photo-3221163.jpeg?auto=compress&cs=tinysrgb&w=600",
+      "name": "Honda Accord",
+      "desc": "Международная промышленная компания Honda Motor Company с главным офисом в Токио производит автомобили для широкой аудитории покупателей. ",
+      "price": 2341314,
+      "img": "https://quto.ru/service-imgs/62/cc/2f/b2/62cc2fb2d934d.jpeg",
       "id": 9
-    },
-    {
-      "name": "Audi",
-      "desc": "oyadufuiah",
-      "price": 8798798,
-      "img": "https://images.pexels.com/photos/909907/pexels-photo-909907.jpeg?auto=compress&cs=tinysrgb&w=600",
-      "id": 10
-    },
-    {
-      "name": "Audi 2",
-      "desc": "78ujjkdhjfhdkjbf",
-      "price": 867786876,
-      "img": "https://images.pexels.com/photos/1545743/pexels-photo-1545743.jpeg?auto=compress&cs=tinysrgb&w=600",
-      "id": 11
-    },
-    {
-      "name": "Audi 3",
-      "desc": "shfjhlksjflkj",
-      "price": 87349178,
-      "img": "https://images.pexels.com/photos/3221163/pexels-photo-3221163.jpeg?auto=compress&cs=tinysrgb&w=600",
-      "id": 12
     }
   ]
 }
