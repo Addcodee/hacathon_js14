@@ -5,7 +5,8 @@
       "desc": "Автомобиль базируется на концепте Audi Sportback Concept, при этом его дизайн заметно консервативнее и ориентирован на другие модели марки Audi.",
       "price": 11000,
       "img": "https://avatars.mds.yandex.net/get-verba/216201/2a0000017f6e15f4368df3112afb695baac4/cattouchret",
-      "id": 1
+      "id": 1,
+      "model": "sedan"
     },
     {
       "name": "Koenigsegg Agera RS",
