@@ -1,7 +1,17 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
+import "./CTA.css";
 
 const CTA = () => {
-  return <div>CTA</div>;
+
+  const navigate = useNavigate()
+
+  return <div className="cta">
+    <div>
+      <h2>GET THE BEST OFFER FROM OUR WEBSITE</h2>
+      <button onClick={() => navigate('/models')}>Getting started</button>
+    </div>
+  </div>;
 };
 
 export default CTA;

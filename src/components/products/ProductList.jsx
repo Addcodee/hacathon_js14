@@ -50,7 +50,7 @@ const ProductList = () => {
   }, [search]);
 
   return (
-    <div className="productList" style={{ marginTop: "3rem" }}>
+    <div className="productList" style={{ marginTop: "3em" }}>
       <Grid className="productList__navigation">
         <Paper
           className="productList__navigation-container"
@@ -80,7 +80,11 @@ const ProductList = () => {
         ))}
       </Box>
       <Pagination
-        sx={{ display: "flex", justifyContent: "center" }}
+        sx={{
+          display: "flex",
+          justifyContent: "center",
+          marginBottom: "1em",
+        }}
         count={count}
         page={page}
         onChange={handleChange}
