@@ -5,7 +5,8 @@ import { useNavigate, useParams } from "react-router-dom";
 import { useProducts } from "../../context/ProductsContextProvider";
 
 const EditProduct = () => {
-  const { getProductDetails, productDetails, saveEdit } = useProducts();
+  const { getProductDetails, productDetails, saveEdit } =
+    useProducts();
 
   const [editedProduct, setEditedProduct] = useState(productDetails);
   const navigate = useNavigate();
@@ -34,7 +35,6 @@ const EditProduct = () => {
   useEffect(() => {
     setEditedProduct(productDetails);
   }, [productDetails]);
-
 
   return (
     <div style={{ display: "flex", justifyContent: "center" }}>
@@ -71,6 +71,14 @@ const EditProduct = () => {
           value={editedProduct.price || ""}
           name="price"
           label="price"
+          sx={{ marginBottom: "1rem" }}
+        />
+        <TextField
+          onChange={handleValues}
+          fullWidth
+          value={editedProduct.model || ""}
+          name="model"
+          label="model"
           sx={{ marginBottom: "1rem" }}
         />
         <TextField

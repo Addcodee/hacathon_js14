@@ -11,11 +11,12 @@ const AddProduct = () => {
     name: "",
     desc: "",
     price: "",
+    model: "",
     img: "",
   });
 
   function clearInputs() {
-    setProduct({ name: "", desc: "", price: "", img: "" });
+    setProduct({ name: "", desc: "", price: "", model: "", img: "" });
   }
 
   const navigate = useNavigate();
@@ -70,6 +71,14 @@ const AddProduct = () => {
           value={product.price}
           name="price"
           label="price"
+          sx={{ marginBottom: "1rem" }}
+        />
+        <TextField
+          onChange={handleValues}
+          fullWidth
+          value={product.model}
+          name="model"
+          label="model"
           sx={{ marginBottom: "1rem" }}
         />
         <TextField
