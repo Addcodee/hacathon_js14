@@ -8,7 +8,7 @@
     ),
     url(../../assets/banner-133.jpg);
   background-repeat: no-repeat;
-  background-position: center;
+  background-position: left;
   background-size: cover;
   height: 100vh;
   padding: 4em 6em;
@@ -57,6 +57,8 @@
   .header {
     font-size: 12px;
     justify-content: center;
+    height: 55vh;
+    background-position: left;
   }
   .header__title {
     justify-content: space-between;
@@ -67,4 +69,5 @@
   .header__title button {
     width: 100%;
   }
+
 }
