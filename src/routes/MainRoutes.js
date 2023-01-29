@@ -1,7 +1,7 @@
 import React from "react";
 import { Route, Routes } from "react-router-dom";
 import AdminPage from "../pages/NavbarPages/AdminPage";
-import CartPage from "../pages/NavbarPages/CartPage";
+import CartPage from "../pages/NavbarPages/CartPage/CartPage";
 import ElectroCarsPage from "../pages/NavbarPages/ElectroCarsPage";
 import HomePage from "../pages/HomePage/HomePage";
 import ModelsPage from "../pages/NavbarPages/ModelsPage";
@@ -20,7 +20,6 @@ const MainRoutes = () => {
     { link: "*", element: <NotFoundPage />, id: 7 },
     { link: "/edit/:id", element: <EditProduct />, id: 8 },
   ];
-
 
   return (
     <>

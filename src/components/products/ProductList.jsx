@@ -2,10 +2,11 @@ import { Box, Grid, Pagination, Paper } from "@mui/material";
 import React, { useEffect, useState } from "react";
 import { useProducts } from "../../context/ProductsContextProvider";
 import ProductCard from "./ProductCard";
-import SelectInput from "../SelectInput";
 import SearchInput from "../SearchInput";
 import "./productList.css";
 import { useSearchParams } from "react-router-dom";
+import FilterByModels from "../FilterByModels";
+import FilterByPrice from "../FilterByPrice";
 
 const ProductList = () => {
   const { getProducts, products } = useProducts();
@@ -69,8 +70,8 @@ const ProductList = () => {
               justifyContent: "space-between",
             }}
           >
-            <SelectInput />
-            <SelectInput />
+            <FilterByModels />
+            <FilterByPrice />
           </Box>
         </Paper>
       </Grid>

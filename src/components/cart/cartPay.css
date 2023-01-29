@@ -1,0 +1,43 @@
+.cartPay__container {
+  font-size: 16px;
+  padding: 1em;
+  transition: 0.2s;
+  height: 383px;
+  width: 49%;
+}
+
+.cartPay__form {
+  padding: 1em 0;
+  display: grid;
+  grid-template-columns: 45% 45%;
+  gap: 10px 10%;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+}
+
+.cartPay__comment {
+  display: flex;
+  margin-top: 1em;
+  color: rgba(0, 0, 0, 0.5);
+}
+
+.cartPay__comment span {
+  width: 3%;
+  font-size: 1.5em;
+  color: #1976d2;
+}
+
+@media screen and (max-width: 768px) {
+  .cartPay__container {
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .cartPay__container {
+    height: 510px;
+    margin-bottom: 2em;
+  }
+  .cartPay__form {
+    grid-template-columns: 100%;
+  }
+}

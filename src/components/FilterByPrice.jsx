@@ -5,7 +5,7 @@ import MenuItem from "@mui/material/MenuItem";
 import FormControl from "@mui/material/FormControl";
 import Select from "@mui/material/Select";
 
-export default function SelectInput() {
+export default function FilterByPrice() {
   const [age, setAge] = React.useState("");
 
   const handleChange = (event) => {
@@ -13,9 +13,9 @@ export default function SelectInput() {
   };
 
   return (
-    <Box className='selectInput'>
+    <Box className="selectInput">
       <FormControl fullWidth>
-        <InputLabel id="demo-simple-select-label">Model</InputLabel>
+        <InputLabel id="demo-simple-select-label">Price</InputLabel>
         <Select
           labelId="demo-simple-select-label"
           id="demo-simple-select"
