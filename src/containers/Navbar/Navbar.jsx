@@ -14,6 +14,9 @@ import MenuItem from "@mui/material/MenuItem";
 import { Link } from "react-router-dom";
 import { HiShoppingCart } from "react-icons/hi";
 import "./navbar.css";
+import { Badge } from "@mui/material";
+import { useCart } from "../../context/CartContextProvider";
+import { getCartsLength } from "../../helpers/functions";
 
 const pages = [
   { name: "Home", link: "/", id: 1 },
@@ -25,6 +28,14 @@ const pages = [
 const settings = ["Profile", "Account", "Dashboard", "Logout"];
 
 function Navbar() {
+  const { addProductToCart } = useCart();
+
+  const [count, setCount] = React.useState(0);
+
+  React.useEffect(() => {
+    setCount(getCartsLength);
+  }, [addProductToCart]);
+
   const [anchorElNav, setAnchorElNav] = React.useState(null);
   const [anchorElUser, setAnchorElUser] = React.useState(null);
 
@@ -44,7 +55,7 @@ function Navbar() {
   };
 
   return (
-    <AppBar position="static" >
+    <AppBar position="static">
       <Container maxWidth="xl" sx={{ backgroundColor: "white" }}>
         <Toolbar disableGutters>
           <Typography
@@ -158,7 +169,9 @@ function Navbar() {
             }}
           >
             <Link to="/cart">
-              <HiShoppingCart className="nav__cart" />
+              <Badge color="error" badgeContent={count}>
+                <HiShoppingCart className="nav__cart" />
+              </Badge>
             </Link>
           </Box>
           <Box sx={{ flexGrow: 0 }}>

@@ -6,7 +6,7 @@ import SearchInput from "../SearchInput";
 import "./productList.css";
 import { useSearchParams } from "react-router-dom";
 import FilterByModels from "../FilterByModels";
-import FilterByPrice from "./FilterByPrice";
+import FilterByPrice from "../FilterByPrice";
 
 const ProductList = () => {
   const { getProducts, products } = useProducts();

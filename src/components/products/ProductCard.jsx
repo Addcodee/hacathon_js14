@@ -7,15 +7,18 @@ import Button from "@mui/material/Button";
 import Typography from "@mui/material/Typography";
 import { useNavigate } from "react-router-dom";
 import { useProducts } from "../../context/ProductsContextProvider";
+import { HiShoppingCart } from "react-icons/hi";
+import { useCart } from "../../context/CartContextProvider";
+import { IconButton } from "@mui/material";
+import { blue } from "@mui/material/colors";
 
 export default function ProductCard({ product }) {
   const navigate = useNavigate();
   const { deleteProduct } = useProducts();
+  const { addProductToCart, checkProductInCart } = useCart();
 
   return (
-    <Card
-      className="product__card"
-    >
+    <Card className="product__card">
       <CardMedia
         sx={{ height: 140 }}
         image={product.img}
@@ -47,6 +50,12 @@ export default function ProductCard({ product }) {
         >
           DELETE
         </Button>
+        <IconButton onClick={() => addProductToCart(product)}>
+          <HiShoppingCart
+            color={checkProductInCart(product.id) ? blue[800] : ""}
+            style={{ width: "1em", height: "1em" }}
+          />
+        </IconButton>
       </CardActions>
     </Card>
   );
