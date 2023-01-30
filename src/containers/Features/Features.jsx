@@ -5,7 +5,7 @@ import { AiOutlineArrowRight } from "react-icons/ai";
 
 const Features = () => {
   return (
-    <div className="features">
+    <div className="features" id="features">
       <div className="features__descr">
         <h3>TULPAR TECHNOLOGY</h3>
         <p>
