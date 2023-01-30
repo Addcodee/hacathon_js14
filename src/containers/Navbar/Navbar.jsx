@@ -14,9 +14,12 @@ import MenuItem from "@mui/material/MenuItem";
 import { Link } from "react-router-dom";
 import { HiShoppingCart } from "react-icons/hi";
 import "./navbar.css";
-import { Badge } from "@mui/material";
+import { Badge, Icon } from "@mui/material";
 import { useCart } from "../../context/CartContextProvider";
 import { getCartsLength } from "../../helpers/functions";
+import { auth } from "../../fire";
+import { useAuth } from "../../context/AuthContextProvider";
+import logo from "../../assets/logo.png";
 
 const pages = [
   { name: "Home", link: "/", id: 1 },
@@ -25,15 +28,10 @@ const pages = [
   { name: "Services", link: "/services", id: 4 },
   { name: "Admin-Panel", link: "/admin", id: 5 },
 ];
-const settings = ["Profile", "Account", "Dashboard", "Logout"];
-
-const menuPages = [
-  { name: "Profile", link: "/profile", id: 1 },
-  { name: "Log In", link: "/auth", id: 2 },
-];
 
 function Navbar() {
   const { addProductToCart } = useCart();
+  const { user, logOut } = useAuth();
 
   const [count, setCount] = React.useState(0);
 
@@ -63,6 +61,11 @@ function Navbar() {
     <AppBar position="static">
       <Container maxWidth="xl" sx={{ backgroundColor: "white" }}>
         <Toolbar disableGutters>
+          <img
+            src={logo}
+            alt="error"
+            style={{ width: "3em", marginRight: "1em" }}
+          />
           <Typography
             variant="h6"
             noWrap
@@ -204,8 +207,36 @@ function Navbar() {
               open={Boolean(anchorElUser)}
               onClose={handleCloseUserMenu}
             >
-              {menuPages.map((pages) => (
-                <Link key={pages.id} to={pages.link}>
+              <Link to="/profile">
+                <MenuItem
+                  sx={{ color: "black" }}
+                  onClick={handleCloseUserMenu}
+                >
+                  <Typography
+                    textAlign="center"
+                    sx={{ fontFamily: "Montserrat" }}
+                  >
+                    Profile
+                  </Typography>
+                </MenuItem>
+              </Link>
+              {user ? (
+                <MenuItem
+                  sx={{ color: "black" }}
+                  onClick={() => {
+                    handleCloseUserMenu();
+                    logOut();
+                  }}
+                >
+                  <Typography
+                    textAlign="center"
+                    sx={{ fontFamily: "Montserrat" }}
+                  >
+                    Log Out
+                  </Typography>
+                </MenuItem>
+              ) : (
+                <Link to="/auth">
                   <MenuItem
                     sx={{ color: "black" }}
                     onClick={handleCloseUserMenu}
@@ -214,11 +245,11 @@ function Navbar() {
                       textAlign="center"
                       sx={{ fontFamily: "Montserrat" }}
                     >
-                      {pages.name}
+                      Log In
                     </Typography>
                   </MenuItem>
                 </Link>
-              ))}
+              )}
             </Menu>
           </Box>
         </Toolbar>
