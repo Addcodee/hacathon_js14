@@ -27,6 +27,11 @@ const pages = [
 ];
 const settings = ["Profile", "Account", "Dashboard", "Logout"];
 
+const menuPages = [
+  { name: "Profile", link: "/profile", id: 1 },
+  { name: "Log In", link: "/auth", id: 2 },
+];
+
 function Navbar() {
   const { addProductToCart } = useCart();
 
@@ -199,15 +204,20 @@ function Navbar() {
               open={Boolean(anchorElUser)}
               onClose={handleCloseUserMenu}
             >
-              {settings.map((setting) => (
-                <MenuItem key={setting} onClick={handleCloseUserMenu}>
-                  <Typography
-                    textAlign="center"
-                    sx={{ fontFamily: "Montserrat" }}
+              {menuPages.map((pages) => (
+                <Link key={pages.id} to={pages.link}>
+                  <MenuItem
+                    sx={{ color: "black" }}
+                    onClick={handleCloseUserMenu}
                   >
-                    {setting}
-                  </Typography>
-                </MenuItem>
+                    <Typography
+                      textAlign="center"
+                      sx={{ fontFamily: "Montserrat" }}
+                    >
+                      {pages.name}
+                    </Typography>
+                  </MenuItem>
+                </Link>
               ))}
             </Menu>
           </Box>

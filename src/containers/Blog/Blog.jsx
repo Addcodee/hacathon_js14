@@ -13,7 +13,7 @@ const Blog = () => {
 
   const lastBlogs = blogs.slice(-3);
   return (
-    <Box className="blog">
+    <Box className="blog" id="blog">
       {lastBlogs.map((obj) => (
         <BlogCard key={obj.id} blog={obj} />
       ))}

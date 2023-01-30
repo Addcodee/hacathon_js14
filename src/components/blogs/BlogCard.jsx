@@ -9,7 +9,7 @@ import "./blogCard.css";
 
 export default function BlogCard({ blog }) {
   return (
-    <Card sx={{ width: 345 }} className="card__body">
+    <Card className="card__body">
       <CardMedia
         sx={{ height: 140 }}
         image={blog.img}

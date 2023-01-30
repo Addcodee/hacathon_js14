@@ -8,6 +8,8 @@ import ModelsPage from "../pages/NavbarPages/ModelsPage";
 import NotFoundPage from "../pages/NotFoundPage";
 import ServicesPage from "../pages/NavbarPages/ServicesPage";
 import EditProduct from "../components/products/EditProduct";
+import AuthPage from "../pages/MenuPages/AuthPage";
+import ProfilePage from "../pages/MenuPages/ProfilePage";
 
 const MainRoutes = () => {
   const PUBLIC_ROUTES = [
@@ -17,8 +19,10 @@ const MainRoutes = () => {
     { link: "/services", element: <ServicesPage />, id: 4 },
     { link: "/admin", element: <AdminPage />, id: 5 },
     { link: "/cart", element: <CartPage />, id: 6 },
-    { link: "*", element: <NotFoundPage />, id: 7 },
-    { link: "/edit/:id", element: <EditProduct />, id: 8 },
+    { link: "/edit/:id", element: <EditProduct />, id: 7 },
+    { link: "/auth", element: <AuthPage />, id: 8 },
+    { link: "/profile", element: <ProfilePage />, id: 9 },
+    { link: "*", element: <NotFoundPage />, id: 10 },
   ];
 
   return (
