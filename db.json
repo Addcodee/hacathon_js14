@@ -72,5 +72,35 @@
       "id": 9,
       "model": "Toyota"
     }
+  ],
+  "blogs": [
+    {
+      "name": "FAST HORSE",
+      "desc": "THE HORSE MADE UNBELIEVEBLE THINGS JUST IN FEW SECONDS",
+      "theme": "animals, sport",
+      "img": "https://images.pexels.com/photos/1996333/pexels-photo-1996333.jpeg?auto=compress&cs=tinysrgb&w=600",
+      "id": 1
+    },
+    {
+      "name": "Tesla is a FUTURE?",
+      "desc": "Tesla shows us wounderful results. The Tesla-Car can drive by itself and can drive till 60km/h",
+      "theme": "cars, tesla, technology",
+      "img": "https://images.pexels.com/photos/11099564/pexels-photo-11099564.jpeg?auto=compress&cs=tinysrgb&w=600",
+      "id": 2
+    },
+    {
+      "name": "You want a 'strong' car? You don't need think twice",
+      "desc": "BMW amaze us by their new car BMW I10, the design looks awesome and the engine, i guess, will shock us",
+      "theme": "cars, future, sport",
+      "img": "https://images.pexels.com/photos/170811/pexels-photo-170811.jpeg?auto=compress&cs=tinysrgb&w=600",
+      "id": 3
+    },
+    {
+      "name": "IMPOSIBLE",
+      "desc": "Daimler, i mean, Mercedes-Benz just made us crazy with their new fixed AMG",
+      "theme": "cars, innovations, sport",
+      "img": "https://images.pexels.com/photos/120049/pexels-photo-120049.jpeg?auto=compress&cs=tinysrgb&w=600",
+      "id": 4
+    }
   ]
 }

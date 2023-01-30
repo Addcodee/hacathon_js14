@@ -1,0 +1,21 @@
+@media screen and (max-width: 1200px) {
+  .card__body {
+    width: 300px;
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  .card__body {
+    width: 250px;
+  }
+  .card__title {
+    font-size: 18px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .card__body {
+    margin-bottom: 1em;
+    width: 100%;
+  }
+}

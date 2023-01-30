@@ -92,7 +92,6 @@ const AddProduct = () => {
         <Button
           onClick={() => {
             addProduct(product);
-            navigate("/models");
             clearInputs();
           }}
         >
