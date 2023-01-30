@@ -1,0 +1,19 @@
+.blog {
+  display: flex;
+  justify-content: space-between;
+  padding: 4em;
+}
+
+@media screen and (max-width: 1024px) {
+  .blog {
+    padding: 4em 2em;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .blog {
+    flex-direction: column;
+    align-items: center;
+    padding: 4em 1em;
+  }
+}

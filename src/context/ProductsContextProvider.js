@@ -1,7 +1,12 @@
 import axios from "axios";
-import React, { createContext, useContext, useReducer } from "react";
+import React, {
+  createContext,
+  useContext,
+  useReducer,
+  useState,
+} from "react";
 import { useLocation, useNavigate } from "react-router-dom";
-import { API, CRUD } from "../helpers/variables";
+import { API__MODELS, CRUD } from "../helpers/variables";
 
 export const productsContext = createContext();
 export const useProducts = () => useContext(productsContext);
@@ -23,7 +28,6 @@ const reducer = (state = INIT_STATE, action) => {
 };
 const ProductsContextProvider = ({ children }) => {
   const [state, dispatch] = useReducer(reducer, INIT_STATE);
-
   const location = useLocation();
   const navigate = useNavigate();
 
@@ -38,18 +42,18 @@ const ProductsContextProvider = ({ children }) => {
       alert("error");
       return;
     }
-    await axios.post(API, newProduct);
+    await axios.post(API__MODELS, newProduct);
   }
 
   //! Read
   async function getProducts() {
-    const { data } = await axios(`${API}${location.search}`);
+    const { data } = await axios(`${API__MODELS}${location.search}`);
 
     dispatch({ type: CRUD.GET_PRODUCTS, payload: data });
   }
   //! Update
   async function getProductDetails(id) {
-    const { data } = await axios(`${API}/${id}`);
+    const { data } = await axios(`${API__MODELS}/${id}`);
     dispatch({
       type: CRUD.GET_PRODUCT_DETAILS,
       payload: data,
@@ -66,13 +70,13 @@ const ProductsContextProvider = ({ children }) => {
       alert("error");
       return;
     }
-    await axios.patch(`${API}/${id}`, editedProduct);
+    await axios.patch(`${API__MODELS}/${id}`, editedProduct);
     getProducts();
   }
 
   //! Delete
   async function deleteProduct(id) {
-    await axios.delete(`${API}/${id}`);
+    await axios.delete(`${API__MODELS}/${id}`);
     getProducts();
   }
 
