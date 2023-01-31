@@ -1,76 +1,52 @@
 {
   "models": [
     {
-      "name": "AUDI A7",
-      "desc": "Автомобиль базируется на концепте Audi Sportback Concept, при этом его дизайн заметно консервативнее и ориентирован на другие модели марки Audi.",
-      "price": 11000,
-      "img": "https://avatars.mds.yandex.net/get-verba/216201/2a0000017f6e15f4368df3112afb695baac4/cattouchret",
-      "id": 1,
-      "model": "Audi"
-    },
-    {
-      "name": "Koenigsegg Agera RS",
-      "desc": "Agera RS был представлен на Женевском автосалоне 2015 года вместе с прототипом Regera. Agera RS — это усовершенствованная версия Agera R, реализующая некоторые новые технологии и функции One:1 и сочетающая в себе функции Agera R и Agera S.",
-      "price": 100000,
-      "img": "https://i0.wp.com/asphalt9.info/wp-content/uploads/2022/11/Koenigsegg-Agera-RS.jpg?resize=1062%2C588&ssl=1",
-      "id": 2,
-      "model": "Audi"
-    },
-    {
-      "name": "BMW iM(2025)",
-      "desc": "This is what we think the brand-new BMW iM will look like when it's expected to be announced in 2025.",
-      "price": 1000000000,
-      "img": "https://i.ytimg.com/vi/9IVLTCmdTkc/maxresdefault.jpg",
-      "id": 3,
-      "model": "Audi"
+      "name": "Mercedes-Benz EQE-class",
+      "desc": "От легендарного дизайна с натянутой дугой линией окна и до захватывающего дух гиперэкрана MBUX: новый EQE объединяет чувственную эстетику с передовым инженерным искусством на самом высоком уровне. Вступайте в новую, роскошную эру электромобильности.",
+      "price": 58000,
+      "model": "Mercedes",
+      "img": "https://assets.oneweb.mercedes-benz.com/bbd/images/v1/4897/c/71/8ec7521e34cad5709642f3b9425328cd79f8a.png?im=Crop,rect=(70,35,460,260);Resize,width=600",
+      "id": 1
     },
     {
       "name": "Mercedes-Benz S-Class",
-      "desc": "It’s impossible not to think of the previous six generations of Mercedes S-Class as you approach this seventh iteration. ",
-      "price": 74480,
-      "img": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQzmUBRM4BUzdmoN5Eud7a1oPn1133YIy82oA&usqp=CAU",
-      "id": 4,
-      "model": "BMW"
+      "desc": "Новый С-Класс создан для максимального погружения в уникальную атмосферу комфорта, спокойствия и абсолютной свободы, царящую в его салоне благодаря интеллектуальным системам безопасности и системе Mercedes-Benz User Experience (MBUX) последнего поколения с голосовым управлением и бескрайними возможностями для персонализации.",
+      "price": 67000,
+      "model": "Mercedes",
+      "img": "https://assets.oneweb.mercedes-benz.com/bbd/images/v1/4688/f/be/f0a37e7304228f808b90b1419f15056037c1a.png?im=Crop,rect=(70,35,460,260);Resize,width=600",
+      "id": 2
     },
     {
-      "name": "Tesla Model-X",
-      "desc": "Tesla (TSLA) was founded in 2003 and named after the 19th-century inventor Nikola Tesla, famous for discovering the properties of rotating electromagnetic fields.",
-      "price": 45000,
-      "img": "https://www.investing.com/academy/wp-content/uploads/2022/08/tesla-statistics.jpg",
-      "id": 5,
-      "model": "BMW"
+      "name": "Mercedes-Benz EQS-Class",
+      "desc": "Технологии Цифровой интерьер Комфорт Подробности    EQS Электрический флагман В новом EQS эмоциональность и интеллект, роскошь и цифровые технологии, стиль, статус, комфорт и экологичность сливаются воедино. Это первый электроседан класса люкс, лидер нового поколения автомобилей, готовый подарить своему владельцу восхитительное чувство гармонии с собой и окружающим миром.  ",
+      "price": 49000,
+      "model": "Mercedes",
+      "img": "https://assets.oneweb.mercedes-benz.com/bbd/images/v1/4773/a/9f/5483a4e335a9f3c25c1d289a231af45f8e375.png?im=Crop,rect=(70,35,460,260);Resize,width=600",
+      "id": 3
     },
     {
-      "name": "Lamborgini Aventador Ultimae",
-      "desc": "Ultimae is latin for the final or last. Which this is. Not just the last Aventador, but the last appearance of Lamborghini’s V12 before the Aventador replacement appears with V12 hybrid power.",
-      "price": 40001000,
-      "img": "https://www.topgear.com/sites/default/files/2022/04/1-Lamborghini-Aventador-Ultimae.jpg",
-      "id": 6,
-      "model": "BMW"
+      "name": "BMW X7",
+      "desc": "Двухэтажные фары стали, возможно, самой обсуждаемой революцией BMW со времен резонансных моделей Криса Бэнгла. В начале года немцы изменили до неузнаваемости седан седьмой серии, а теперь жертвой нового имиджа стал обновленный BMW X7. Распространится ли эта эпидемия на младшие модели или останется признаком самых дорогих — неизвестно, но X7 после рестайлинга не узнать и внутри. Кажется, теперь это самый продвинутый полноразмерный кроссовер: например, здесь даже не требуется ключ — его функцию выполняет смартфон.",
+      "price": 69000,
+      "model": "BMW",
+      "img": "https://www.bmw.kg/content/bmw/marketB4R1/bmw_kg/ru_KG/all-models/x-series/x7/2022/bmw-x7-highlights/jcr:content/par/multicontent/tabs/multicontenttab/items/smallteaser/image.transform/smallteaser/image.1658723578232.jpg",
+      "id": 4
     },
     {
-      "name": "Bugatti Divo",
-      "desc": "Bugatti Divo — спортивный автомобиль автопроизводителя Bugatti. Автомобиль назван в честь французского гонщика Альберта Диво, который участвовал в гонках за команду Bugatti в 1920-х годах и выиграл гонку Targa Florio дважды[1].",
-      "price": 100000000,
-      "img": "https://upload.wikimedia.org/wikipedia/commons/1/16/Bugatti_Divo%2C_GIMS_2019%2C_Le_Grand-Saconnex_%28GIMS0029%29.jpg",
-      "id": 7,
-      "model": "Toyota"
+      "name": "BMW M7",
+      "desc": "Сочетание технического совершенства и захватывающих спортивных характеристик заставит ваше сердце биться чаще. Модели BMW M — это настоящие спортивные автомобили. Гоночные технологии, включая спортивную подвеску M, двигатели и характерные настройки M, превращают эти модели, доступные в различных кузовах — от седанов и купе до SUV, в бескомпромиссное воплощение роскоши и динамики.",
+      "price": 75400,
+      "model": "BMW",
+      "img": "https://www.bmw-kz.com/content/dam/bmw/marketB4R1/bmw_kz/all-models/m-series/m8-grancoupe/bmw-m8-competition-gran-coupe-modelfinder.png.asset.1650971207049.png",
+      "id": 5
     },
     {
-      "name": "Toyota Crown",
-      "desc": "I just wrote the description by myself, cuz nobody care, i guess nobody could notice it",
-      "price": 10000005,
-      "img": "https://hips.hearstapps.com/hmg-prod/images/2023-toyota-crown-101-1657642173.jpg?crop=0.729xw:0.820xh;0.218xw,0.0481xh&resize=640:*",
-      "id": 8,
-      "model": "Toyota"
-    },
-    {
-      "name": "Honda Accord",
-      "desc": "Международная промышленная компания Honda Motor Company с главным офисом в Токио производит автомобили для широкой аудитории покупателей. ",
-      "price": 2341314,
-      "img": "https://quto.ru/service-imgs/62/cc/2f/b2/62cc2fb2d934d.jpeg",
-      "id": 9,
-      "model": "Toyota"
+      "name": "BMW M8 Cabrio",
+      "desc": "В основу дизайна роскошных спортивных кабриолетов положен культовый стиль, который является наглядным свидетельством динамичности и в то же самое время впечатляющей солидности. В салоне эффектные элементы M и роскошные детали создают спортивную и при этом эксклюзивную атмосферу.",
+      "price": 90000,
+      "model": "BMW",
+      "img": "https://www.bmw-kz.com/content/dam/bmw/common/all-models/m-series/m8-convertible/2022/navigation/bmw-modelfinder-stage2-890x501.png/jcr:content/renditions/cq5dam.resized.img.585.low.time1643111598711.png",
+      "id": 6
     }
   ],
   "blogs": [

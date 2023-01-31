@@ -65,12 +65,7 @@ export default function ProductCard({ product }) {
             </Button>
           </>
         ) : null}
-        <Button
-          onClick={() => deleteProduct(product.id)}
-          size="small"
-        >
-          DETAILS
-        </Button>
+        <Button size="small">DETAILS</Button>
         <IconButton onClick={() => addProductToCart(product)}>
           <HiShoppingCart
             color={checkProductInCart(product.id) ? blue[800] : ""}

@@ -4,14 +4,10 @@ import InputLabel from "@mui/material/InputLabel";
 import MenuItem from "@mui/material/MenuItem";
 import FormControl from "@mui/material/FormControl";
 import Select from "@mui/material/Select";
+import { useProducts } from "../context/ProductsContextProvider";
 
 export default function FilterByPrice() {
-  const [age, setAge] = React.useState("");
-
-  const handleChange = (event) => {
-    setAge(event.target.value);
-  };
-
+  const { filterByParams } = useProducts();
   return (
     <Box className="selectInput">
       <FormControl fullWidth>
@@ -19,13 +15,16 @@ export default function FilterByPrice() {
         <Select
           labelId="demo-simple-select-label"
           id="demo-simple-select"
-          value={age}
-          label="Age"
-          onChange={handleChange}
+          defaultValue={"all"}
+          label="Price"
+          onChange={(e) => {
+            filterByParams("price_lte", e.target.value);
+          }}
         >
-          <MenuItem value={10}>BMW</MenuItem>
-          <MenuItem value={20}>AUDI</MenuItem>
-          <MenuItem value={30}>Toyota</MenuItem>
+          <MenuItem value="all">All</MenuItem>
+          <MenuItem value="60000">Less then 60.000$</MenuItem>
+          <MenuItem value="70000">Less then 70.000$</MenuItem>
+          <MenuItem value="80000">Less then 80.000$</MenuItem>
         </Select>
       </FormControl>
     </Box>
