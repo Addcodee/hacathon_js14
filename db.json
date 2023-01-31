@@ -47,6 +47,30 @@
       "model": "BMW",
       "img": "https://www.bmw-kz.com/content/dam/bmw/common/all-models/m-series/m8-convertible/2022/navigation/bmw-modelfinder-stage2-890x501.png/jcr:content/renditions/cq5dam.resized.img.585.low.time1643111598711.png",
       "id": 6
+    },
+    {
+      "name": "Toyota Tundra",
+      "desc": "Также для пикапа доступен гибрид i-Force с инсталлированным в 10-ступенчатый \"автомат\" электродвигателем, суммарная отдача - 443 л.с. и 790 Нм. Такая силовая установка является стандартной для исполнения TRD Pro с усиленной подвеской.",
+      "price": 75000,
+      "model": "Toyota",
+      "img": "https://cdnstatic.rg.ru/crop1120x748/uploads/images/217/31/84/2022-toyota-tundra-trd-pro-exterior-front-quarter.jpg",
+      "id": 7
+    },
+    {
+      "name": "Toyota Supra",
+      "desc": "Купе Toyota GR Supra, представленное в 2019 году, пережило очередную модернизацию. Главной обновкой стала шестиступенчатая механика, которую впервые предложили для модели пятого поколения «по просьбам поклонников и покупателей».",
+      "price": 100000,
+      "model": "Toyota",
+      "img": "https://cdn.motor1.com/images/mgl/0eeJ2W/s1/2023-toyota-supra-with-manual-gearbox-europe.jpg",
+      "id": 8
+    },
+    {
+      "name": "Toyota Land Cruiser 300",
+      "desc": "Внедорожник Toyota Land Cruiser 300 пользуется огромной популярностью, поэтому британское ателье Khann International представила новую дорогую модификацию автомобиля для ценителей, которые хотят выделиться.",
+      "price": 120000,
+      "model": "Toyota",
+      "img": "https://cdn.motor1.com/images/mgl/zOMBL/s1/eksterer-toyota-land-cruiser-300.webp",
+      "id": 9
     }
   ],
   "blogs": [
