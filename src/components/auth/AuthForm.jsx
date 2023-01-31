@@ -13,24 +13,7 @@ import Typography from "@mui/material/Typography";
 import Container from "@mui/material/Container";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
 import { useAuth } from "../../context/AuthContextProvider";
-
-function Copyright(props) {
-  return (
-    <Typography
-      variant="body2"
-      color="text.secondary"
-      align="center"
-      {...props}
-    >
-      {"Copyright © "}
-      <Link color="inherit" href="https://mui.com/">
-        Your Website
-      </Link>{" "}
-      {new Date().getFullYear()}
-      {"."}
-    </Typography>
-  );
-}
+import { useNavigate } from "react-router-dom";
 
 const theme = createTheme();
 
@@ -40,16 +23,17 @@ export default function AuthForm() {
   const [pass, setPass] = React.useState("");
   const [logInEmail, setLogInEmail] = React.useState("");
   const [logInPass, setLogInPass] = React.useState("");
-  const { register, logIn } = useAuth();
+  const { register, logIn, user } = useAuth();
 
-  const handleSubmit = (event) => {
-    event.preventDefault();
-    const data = new FormData(event.currentTarget);
-    console.log({
-      email: data.get("email"),
-      password: data.get("password"),
-    });
-  };
+  function clearRegisterInputs() {
+    setEmail("");
+    setPass("");
+  }
+
+  function clearSignInInputs() {
+    setLogInEmail("");
+    setLogInPass("");
+  }
 
   return (
     <ThemeProvider theme={theme}>
@@ -75,12 +59,7 @@ export default function AuthForm() {
               Sign up
             </Typography>
           )}
-          <Box
-            component="form"
-            onSubmit={handleSubmit}
-            noValidate
-            sx={{ mt: 1 }}
-          >
+          <Box component="form" noValidate sx={{ mt: 1 }}>
             {hasAccount ? (
               <>
                 <TextField
@@ -93,6 +72,7 @@ export default function AuthForm() {
                   name="email"
                   autoComplete="email"
                   autoFocus
+                  value={logInEmail}
                 />
                 <TextField
                   onChange={(e) => setLogInPass(e.target.value)}
@@ -104,6 +84,7 @@ export default function AuthForm() {
                   type="password"
                   id="password"
                   autoComplete="current-password"
+                  value={logInPass}
                 />
               </>
             ) : (
@@ -118,6 +99,7 @@ export default function AuthForm() {
                   name="email"
                   autoComplete="email"
                   autoFocus
+                  value={email}
                 />
                 <TextField
                   onChange={(e) => setPass(e.target.value)}
@@ -129,30 +111,34 @@ export default function AuthForm() {
                   type="password"
                   id="password"
                   autoComplete="current-password"
+                  value={pass}
                 />
               </>
             )}
-            <FormControlLabel
-              control={<Checkbox value="remember" color="primary" />}
-              label="Remember me"
-            />
+
             {hasAccount ? (
               <Button
-                type="submit"
+                type="button"
                 fullWidth
                 variant="contained"
                 sx={{ mt: 3, mb: 2 }}
-                onClick={() => logIn(logInEmail, logInPass)}
+                onClick={() => {
+                  logIn(logInEmail, logInPass);
+                  clearSignInInputs();
+                }}
               >
                 Sign In
               </Button>
             ) : (
               <Button
-                type="submit"
+                type="button"
                 fullWidth
                 variant="contained"
                 sx={{ mt: 3, mb: 2 }}
-                onClick={() => register(email, pass)}
+                onClick={() => {
+                  register(email, pass);
+                  clearRegisterInputs();
+                }}
               >
                 Sign Up
               </Button>
@@ -160,14 +146,18 @@ export default function AuthForm() {
             <Grid
               onClick={() => setHasAccount(!hasAccount)}
               container
+              justifyContent={"flex-end"}
             >
               <Link sx={{ cursor: "pointer" }}>
-                <Grid item>{"Already have an account? Sign in"}</Grid>
+                <Grid item>
+                  {hasAccount
+                    ? "Don't have an account yet? Sign up"
+                    : "Already have an account? Sign in"}
+                </Grid>
               </Link>
             </Grid>
           </Box>
         </Box>
-        <Copyright sx={{ mt: 8, mb: 4 }} />
       </Container>
     </ThemeProvider>
   );

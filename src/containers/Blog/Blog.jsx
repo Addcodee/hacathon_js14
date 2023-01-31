@@ -5,10 +5,18 @@ import { useBlog } from "../../context/BlogContextProvider";
 import "./blog.css";
 
 const Blog = () => {
-  const { getBlogs, blogs } = useBlog();
+  const { getBlogs, blogs, getFavs, getSaves } = useBlog();
 
   useEffect(() => {
     getBlogs();
+  }, []);
+
+  useEffect(() => {
+    getFavs();
+  }, []);
+
+  useEffect(() => {
+    getSaves();
   }, []);
 
   const lastBlogs = blogs.slice(-3);

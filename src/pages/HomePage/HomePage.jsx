@@ -10,7 +10,6 @@ const HomePage = () => {
       <Header />
       <Features/>
       <CTA/>
-      {/* <Offer/> */}
       <Blog/>
     </div>
   );

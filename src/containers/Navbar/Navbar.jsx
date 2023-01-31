@@ -7,31 +7,26 @@ import Typography from "@mui/material/Typography";
 import Menu from "@mui/material/Menu";
 import MenuIcon from "@mui/icons-material/Menu";
 import Container from "@mui/material/Container";
-import Avatar from "@mui/material/Avatar";
 import Button from "@mui/material/Button";
-import Tooltip from "@mui/material/Tooltip";
 import MenuItem from "@mui/material/MenuItem";
 import { Link } from "react-router-dom";
 import { HiShoppingCart } from "react-icons/hi";
 import "./navbar.css";
-import { Badge, Icon } from "@mui/material";
+import { Badge } from "@mui/material";
 import { useCart } from "../../context/CartContextProvider";
 import { getCartsLength } from "../../helpers/functions";
-import { auth } from "../../fire";
 import { useAuth } from "../../context/AuthContextProvider";
 import logo from "../../assets/logo.png";
-
-const pages = [
-  { name: "Home", link: "/", id: 1 },
-  { name: "Models", link: "/models", id: 2 },
-  { name: "Electro-Cars", link: "/electro-cars", id: 3 },
-  { name: "Services", link: "/services", id: 4 },
-  { name: "Admin-Panel", link: "/admin", id: 5 },
-];
+import { ADMIN } from "../../helpers/variables";
 
 function Navbar() {
   const { addProductToCart } = useCart();
   const { user, logOut } = useAuth();
+
+  const pages = [
+    { name: "Home", link: "/", id: 1 },
+    { name: "Models", link: "/models", id: 2 },
+  ];
 
   const [count, setCount] = React.useState(0);
 
@@ -40,21 +35,12 @@ function Navbar() {
   }, [addProductToCart]);
 
   const [anchorElNav, setAnchorElNav] = React.useState(null);
-  const [anchorElUser, setAnchorElUser] = React.useState(null);
 
   const handleOpenNavMenu = (event) => {
     setAnchorElNav(event.currentTarget);
   };
-  const handleOpenUserMenu = (event) => {
-    setAnchorElUser(event.currentTarget);
-  };
-
   const handleCloseNavMenu = () => {
     setAnchorElNav(null);
-  };
-
-  const handleCloseUserMenu = () => {
-    setAnchorElUser(null);
   };
 
   return (
@@ -129,6 +115,18 @@ function Navbar() {
                   </MenuItem>
                 </Link>
               ))}
+              {user?.email === ADMIN ? (
+                <Link to="/admin">
+                  <MenuItem
+                    sx={{ color: "black" }}
+                    onClick={handleCloseNavMenu}
+                  >
+                    <Typography textAlign="center">
+                      ADMIN PANEL
+                    </Typography>
+                  </MenuItem>
+                </Link>
+              ) : null}
             </Menu>
           </Box>
           <Typography
@@ -168,6 +166,20 @@ function Navbar() {
                 </Button>
               </Link>
             ))}
+            {user?.email === ADMIN ? (
+              <Link to="/admin">
+                <Button
+                  onClick={handleCloseNavMenu}
+                  sx={{
+                    color: "black",
+                    display: "block",
+                    fontFamily: "Montserrat",
+                  }}
+                >
+                  ADMIN PANEL
+                </Button>
+              </Link>
+            ) : null}
           </Box>
           <Box
             sx={{
@@ -182,76 +194,33 @@ function Navbar() {
               </Badge>
             </Link>
           </Box>
-          <Box sx={{ flexGrow: 0 }}>
-            <Tooltip title="Open settings">
-              <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
-                <Avatar
-                  alt="Remy Sharp"
-                  src="/static/images/avatar/2.jpg"
-                />
-              </IconButton>
-            </Tooltip>
-            <Menu
-              sx={{ mt: "45px" }}
-              id="menu-appbar"
-              anchorEl={anchorElUser}
-              anchorOrigin={{
-                vertical: "top",
-                horizontal: "right",
+
+          {user ? (
+            <MenuItem
+              sx={{ color: "black" }}
+              onClick={() => {
+                logOut();
               }}
-              keepMounted
-              transformOrigin={{
-                vertical: "top",
-                horizontal: "right",
-              }}
-              open={Boolean(anchorElUser)}
-              onClose={handleCloseUserMenu}
             >
-              <Link to="/profile">
-                <MenuItem
-                  sx={{ color: "black" }}
-                  onClick={handleCloseUserMenu}
+              <Typography
+                textAlign="center"
+                sx={{ fontFamily: "Montserrat" }}
+              >
+                Log Out
+              </Typography>
+            </MenuItem>
+          ) : (
+            <Link to="/auth">
+              <MenuItem sx={{ color: "black" }}>
+                <Typography
+                  textAlign="center"
+                  sx={{ fontFamily: "Montserrat" }}
                 >
-                  <Typography
-                    textAlign="center"
-                    sx={{ fontFamily: "Montserrat" }}
-                  >
-                    Profile
-                  </Typography>
-                </MenuItem>
-              </Link>
-              {user ? (
-                <MenuItem
-                  sx={{ color: "black" }}
-                  onClick={() => {
-                    handleCloseUserMenu();
-                    logOut();
-                  }}
-                >
-                  <Typography
-                    textAlign="center"
-                    sx={{ fontFamily: "Montserrat" }}
-                  >
-                    Log Out
-                  </Typography>
-                </MenuItem>
-              ) : (
-                <Link to="/auth">
-                  <MenuItem
-                    sx={{ color: "black" }}
-                    onClick={handleCloseUserMenu}
-                  >
-                    <Typography
-                      textAlign="center"
-                      sx={{ fontFamily: "Montserrat" }}
-                    >
-                      Log In
-                    </Typography>
-                  </MenuItem>
-                </Link>
-              )}
-            </Menu>
-          </Box>
+                  Log In
+                </Typography>
+              </MenuItem>
+            </Link>
+          )}
         </Toolbar>
       </Container>
     </AppBar>
