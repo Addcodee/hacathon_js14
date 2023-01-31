@@ -8,9 +8,7 @@ const Header = () => {
     <div className="header">
       <div className="header__title">
         <h1>INSPIRATION FOR THE FUTURE</h1>
-        <button onClick={() => navigate("/electro-cars")}>
-          More
-        </button>
+        <button>More</button>
       </div>
     </div>
   );

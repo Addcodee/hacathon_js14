@@ -18,4 +18,4 @@ export const BLOG = {
   GET_SAVES: "GET_SAVES",
 };
 
-export const ADMIN = "musicchannel0p@gmail.com";
+export const ADMIN = "admin@gmail.com";
