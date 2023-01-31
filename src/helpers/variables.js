@@ -14,4 +14,8 @@ export const CART = {
 export const BLOG = {
   GET_BLOGS: "GET_BLOGS",
   GET_BLOGS_ARTICLE: "GET_PRODUCT_ARTICLE",
+  GET_FAVS: "GET_FAVS",
+  GET_SAVES: "GET_SAVES",
 };
+
+export const ADMIN = "musicchannel0p@gmail.com";

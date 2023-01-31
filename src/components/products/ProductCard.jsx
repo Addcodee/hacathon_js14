@@ -11,14 +11,25 @@ import { HiShoppingCart } from "react-icons/hi";
 import { useCart } from "../../context/CartContextProvider";
 import { IconButton } from "@mui/material";
 import { blue } from "@mui/material/colors";
+import { useAuth } from "../../context/AuthContextProvider";
+import { ADMIN } from "../../helpers/variables";
+import { useBlog } from "../../context/BlogContextProvider";
 
 export default function ProductCard({ product }) {
   const navigate = useNavigate();
   const { deleteProduct } = useProducts();
   const { addProductToCart, checkProductInCart } = useCart();
+  const { user } = useAuth();
 
   return (
-    <Card className="product__card">
+    <Card
+      sx={{
+        display: "flex",
+        flexDirection: "column",
+        justifyContent: "space-between",
+      }}
+      className="product__card"
+    >
       <CardMedia
         sx={{ height: 140 }}
         image={product.img}
@@ -38,17 +49,27 @@ export default function ProductCard({ product }) {
         </Typography>
       </CardContent>
       <CardActions>
-        <Button
-          onClick={() => navigate(`/edit/${product.id}`)}
-          size="small"
-        >
-          EDIT
-        </Button>
+        {user?.email === ADMIN ? (
+          <>
+            <Button
+              onClick={() => navigate(`/edit/${product.id}`)}
+              size="small"
+            >
+              EDIT
+            </Button>
+            <Button
+              onClick={() => deleteProduct(product.id)}
+              size="small"
+            >
+              DELETE
+            </Button>
+          </>
+        ) : null}
         <Button
           onClick={() => deleteProduct(product.id)}
           size="small"
         >
-          DELETE
+          DETAILS
         </Button>
         <IconButton onClick={() => addProductToCart(product)}>
           <HiShoppingCart

@@ -3,11 +3,21 @@ import Card from "@mui/material/Card";
 import CardActions from "@mui/material/CardActions";
 import CardContent from "@mui/material/CardContent";
 import CardMedia from "@mui/material/CardMedia";
-import Button from "@mui/material/Button";
 import Typography from "@mui/material/Typography";
 import "./blogCard.css";
+import { IconButton } from "@mui/material";
+import { IoIosHeartEmpty } from "react-icons/io";
+import { MdDataSaverOn } from "react-icons/md";
+import { useBlog } from "../../context/BlogContextProvider";
+import { blue } from "@mui/material/colors";
 
 export default function BlogCard({ blog }) {
+  const {
+    addPostToFavs,
+    checkPostInFavs,
+    addPostToSaves,
+    checkPostInSaves,
+  } = useBlog();
   return (
     <Card className="card__body">
       <CardMedia
@@ -47,9 +57,19 @@ export default function BlogCard({ blog }) {
             {blog.desc}
           </Typography>
         </CardContent>
-        <CardActions>
-          <Button size="small">Like</Button>
-          <Button size="small">Избранное</Button>
+        <CardActions
+          sx={{ display: "flex", justifyContent: "space-between" }}
+        >
+          <IconButton onClick={() => addPostToFavs(blog)}>
+            <IoIosHeartEmpty
+              color={checkPostInFavs(blog.id) ? "red" : ""}
+            />
+          </IconButton>
+          <IconButton onClick={() => addPostToSaves(blog)}>
+            <MdDataSaverOn
+              color={checkPostInSaves(blog.id) ? blue[800] : ""}
+            />
+          </IconButton>
         </CardActions>
       </div>
     </Card>

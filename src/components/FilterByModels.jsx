@@ -20,7 +20,6 @@ export default function FilterByModels() {
           label="Models"
           onChange={(e) => {
             filterByParams("model", e.target.value);
-            console.log(e.target.value);
           }}
         >
           <MenuItem value="all">All</MenuItem>

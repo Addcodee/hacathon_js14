@@ -1,8 +1,10 @@
 import { Button, Paper, TextField } from "@mui/material";
 import React, { useState } from "react";
+import { useCart } from "../../context/CartContextProvider";
 import "./cartPay.css";
 
 const CartPay = () => {
+  const { removeAllProductsInCart } = useCart();
   const [creditCard, setCreditCard] = useState({
     number: "",
     name: "",
@@ -65,7 +67,13 @@ const CartPay = () => {
           value={creditCard.comment}
           label="give a comment"
         />
-        <Button variant="contained" onClick={clearInputs}>
+        <Button
+          variant="contained"
+          onClick={() => {
+            clearInputs();
+            removeAllProductsInCart();
+          }}
+        >
           Buy NOW
         </Button>
       </div>
